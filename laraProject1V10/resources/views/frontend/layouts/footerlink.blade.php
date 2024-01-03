@@ -1,0 +1,12 @@
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script src="{{asset('frontend/assets/js/animations.js')}}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+<script src="{{asset('frontend/assets/js/custom-script.js')}}"></script>
+<script src="{{asset('frontend/assets/js/owl.carousel.js')}}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{{asset('frontend/assets/js/text-animations.js')}}"></script>
+<script src="{{asset('frontend/assets/js/carousel.js')}}"></script>
+<script src="{{asset('frontend/assets/js/video-section.js')}}"></script>
