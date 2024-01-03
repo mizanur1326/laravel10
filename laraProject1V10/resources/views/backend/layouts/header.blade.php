@@ -2,7 +2,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="/admin" class="logo d-flex align-items-center">
+      <a href="/login" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">NiceAdmin</span>
       </a>
@@ -215,10 +215,11 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{URL('logout')}}">
+              <form class="dropdown-item d-flex align-items-center" method="POST" action="{{route('logout')}}"> 
+                @csrf               
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+                <span><button type="submit"> Sign Out </button></span>
+              </form>
             </li>
 
           </ul><!-- End Profile Dropdown Items -->
