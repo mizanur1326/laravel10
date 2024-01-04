@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Category - Category Views');
+@section('title', 'Product - Product Views');
 
 @section('content')
 
@@ -24,24 +24,31 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Categories</h5>
+              <h5 class="card-title">Products</h5>
               
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>Category ID</th>
-                    <th>Category Name</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Product Category</th>
                     <th>Action</th>
                     {{-- <th data-type="date" data-format="YYYY/DD/MM">Start Date</th> --}}
                   </tr>
                 </thead>
                 <tbody>   
-                    @foreach ($category as $cat)                       
+                    @foreach ($products as $product)                       
                                   
                     <tr>
-                        <td>{{$cat->id}}</td>
-                        <td>{{$cat->name}}</td>
+                        <td>{{$product->id}}</td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->price}}</td>
+                        <td>{{$product->category_id}}</td>
+
                         <td><button class="btn btn-primary">Edit</button> | <button class="btn btn-danger">Delete</button></td>
                     </tr>
 
@@ -68,6 +75,7 @@
     </section>
 
 </main><!-- End #main -->
+
 
 
 
