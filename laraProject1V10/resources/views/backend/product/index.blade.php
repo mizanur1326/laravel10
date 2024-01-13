@@ -47,7 +47,8 @@
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->price}}</td>
-                        <td>{{$product->category_id}}</td>
+                        {{-- <td>{{$product->category_id}}</td> --}}
+                        <td>{{$product->category->name}}</td>
 
                         <td><button class="btn btn-primary">Edit</button> | <button class="btn btn-danger">Delete</button></td>
                     </tr>
