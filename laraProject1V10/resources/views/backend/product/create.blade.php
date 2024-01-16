@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Category - Category Views');
+@section('title', 'Product - Add Product');
 
 @section('content')
 
@@ -33,6 +33,7 @@
                   <label for="validationDefault01" class="form-label">Product name</label>
                   <input type="text" class="form-control" id="validationDefault01" name="product" :value="old('product')" placeholder="Product name" required>
                 </div> <br>
+
                 <div class="col-md-12">
                   <label for="validationDefault02" class="form-label">Description</label><br>
                   {{-- <input type="text" class="form-control" id="validationDefault02" value="Doe" required> --}}
@@ -43,6 +44,7 @@
                   <label for="validationDefault03" class="form-label">Price</label>
                   <input type="text" class="form-control" name="price" id="validationDefault03" required>
                 </div>
+
                 <div class="col-md-12">
                   <label for="validationDefault04" class="form-label">Category</label>
                   <select class="form-select" id="validationDefault04" name="category" required>
@@ -53,6 +55,7 @@
                     @endforeach
                   </select>
                 </div>
+                
                 <div class="col-12">
                   <button class="btn btn-primary" type="submit">Submit</button>
                 </div>

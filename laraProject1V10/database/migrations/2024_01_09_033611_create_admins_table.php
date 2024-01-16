@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->tinyInteger('status')->default('0');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
         });
     }
 
