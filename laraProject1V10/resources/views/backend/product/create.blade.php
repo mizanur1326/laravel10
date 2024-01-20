@@ -24,14 +24,21 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Add Product</h5>             
+              <h5 class="card-title">Add Product</h5>
+                <h4 class="alert alert-danger">
+                  @if($errors->any())
+                  @foreach($errors as $error)
+                    <li>{{$error}}</li>
+                  @endforeach
+                @endif 
+                </h4>
 
               <!-- Browser Default Validation -->
               <form class="row g-3" method="POST" action="{{ route('product.store') }}">
                 @csrf
                 <div class="col-md-12">
                   <label for="validationDefault01" class="form-label">Product name</label>
-                  <input type="text" class="form-control" id="validationDefault01" name="product" :value="old('product')" placeholder="Product name" required>
+                  <input type="text" class="form-control" id="validationDefault01" name="product" value= "{{old('price')}}" placeholder="Product name" required>
                 </div> <br>
 
                 <div class="col-md-12">
@@ -48,12 +55,19 @@
                 <div class="col-md-12">
                   <label for="validationDefault04" class="form-label">Category</label>
                   <select class="form-select" id="validationDefault04" name="category" required>
-                    <option selected >Choose A Category</option>
+                    <option selected value="">Choose A Category</option>
                     @foreach ($category as $cat)
-                    <option value="{{$cat->id}}">"{{$cat->name}}"</option>
+                    <option value="{{$cat->id}}" {{old('category') == $cat->id ? 'selected': ''}}>{{$cat->name}}</option>
                         
                     @endforeach
-                  </select>
+                  </select> <br>
+                </div> 
+
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Upload Image</label> <br>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" name="image" id="formFile">
+                  </div>
                 </div>
                 
                 <div class="col-12">
