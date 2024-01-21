@@ -34,6 +34,7 @@
                     <th>Product Name</th>
                     <th>Product Description</th>
                     <th>Product Price</th>
+                    <th>Product Image</th>
                     <th>Product Category</th>
                     <th>Action</th>
                     {{-- <th data-type="date" data-format="YYYY/DD/MM">Start Date</th> --}}
@@ -51,7 +52,7 @@
                         {{-- <td>{{$product->category_id}}</td> --}}
                         <td>{{$product->category->name}}</td>
 
-                        <td><button class="btn btn-primary">Edit</button> | <button class="btn btn-danger">Delete</button></td>
+                        <td><button class="btn btn-primary"><a href="{{route('product.edit', $product->id)}}">Edit</a></button> | <button class="btn btn-danger"><a href="{{route('product.delete', $product->id)}}" onclick="return confirm('Are You sure to Delete')">Delete</a> </button></td>
                     </tr>
 
                   @endforeach 

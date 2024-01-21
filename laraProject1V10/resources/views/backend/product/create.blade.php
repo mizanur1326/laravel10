@@ -44,7 +44,7 @@
                 <div class="col-md-12">
                   <label for="validationDefault02" class="form-label">Description</label><br>
                   {{-- <input type="text" class="form-control" id="validationDefault02" value="Doe" required> --}}
-                  <textarea class="form-control quill-editor-full" name="description" id="" rows="5">{{old('description')}}</textarea>
+                  <textarea class="form-control tinymce-editor" name="description" id="" rows="5">{{old('description')}}</textarea>
                 </div><br><br>
                 
                 <div class="col-md-12" style="margin-top: 50px">
