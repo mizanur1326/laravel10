@@ -47,6 +47,7 @@
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->price}}</td>
+                        <td> <img src="{{'images/'. $product->image}}" width="100" alt=""> </td>
                         {{-- <td>{{$product->category_id}}</td> --}}
                         <td>{{$product->category->name}}</td>
 

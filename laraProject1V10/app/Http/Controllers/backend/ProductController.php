@@ -33,23 +33,35 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required | min:4',
+            'product' => 'required | min:4',
             'description' => 'required | min:6',
             'price' => 'required|numeric',
             'category' => 'required',
             'image' => 'mimes:jpg,jpeg,png',
         ]);
+
+        $filename = time(). "." . $request->image->extension();
+
         if($validate){
             $data = [
                 'name' => $request->product,
                 'description' => $request->description,
                 'price' => $request->price,
                 'category_id' => $request->category,
+                'image'=> $filename,
             ];
     
-            if(Product::insert($data)){
-                return redirect('product')->with('msg', 'Product Added Successfully');
-            }
+            // if(Product::insert($data)){
+            //     return redirect('product')->with('msg', 'Product Added Successfully');
+            // }
+
+            $model = new Product();       
+            if($model->create($data)){
+            $request->image->move('images', $filename);    
+            return redirect('product')->with('msg', 'Product Added Successfully');
+          }
+
+
         }
     }
 

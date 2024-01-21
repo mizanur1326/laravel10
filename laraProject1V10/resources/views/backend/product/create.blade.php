@@ -25,31 +25,31 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Add Product</h5>
-                <h4 class="alert alert-danger">
-                  @if($errors->any())
-                  @foreach($errors as $error)
-                    <li>{{$error}}</li>
+                @if($errors->any()) 
+                <div class="alert alert-danger">
+                  @foreach($errors->all() as $err)
+                    <li>{{$err}}</li>
                   @endforeach
-                @endif 
-                </h4>
+                </div>
+                @endif
 
               <!-- Browser Default Validation -->
-              <form class="row g-3" method="POST" action="{{ route('product.store') }}">
+              <form class="row g-3" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-12">
                   <label for="validationDefault01" class="form-label">Product name</label>
-                  <input type="text" class="form-control" id="validationDefault01" name="product" value= "{{old('price')}}" placeholder="Product name" required>
+                  <input type="text" class="form-control" id="validationDefault01" name="product" value= "{{old('product')}}" placeholder="Product name" required>
                 </div> <br>
 
                 <div class="col-md-12">
                   <label for="validationDefault02" class="form-label">Description</label><br>
                   {{-- <input type="text" class="form-control" id="validationDefault02" value="Doe" required> --}}
-                  <textarea class="form-control quill-editor-full" name="description" id="" rows="5"></textarea>
+                  <textarea class="form-control quill-editor-full" name="description" id="" rows="5">{{old('description')}}</textarea>
                 </div><br><br>
                 
                 <div class="col-md-12" style="margin-top: 50px">
                   <label for="validationDefault03" class="form-label">Price</label>
-                  <input type="text" class="form-control" name="price" id="validationDefault03" required>
+                  <input type="text" class="form-control" name="price" {{old('price')}} id="validationDefault03" required>
                 </div>
 
                 <div class="col-md-12">
