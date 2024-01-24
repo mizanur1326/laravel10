@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,9 @@ Route::middleware('auth')->group(function () {
 Route::get('admin/login', [AdminController::class, 'login']);
 Route::post('admin/login', [AdminController::class, 'store'])->name('adminLogin');
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+
+Route::get('findproducts', [SearchController::class, 'Search']);
 
 
 require __DIR__.'/auth.php';
