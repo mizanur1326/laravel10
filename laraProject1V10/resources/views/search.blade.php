@@ -21,11 +21,27 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Search Table</h5>
-                    <form action="" method="get">
+                      <form action="" method="get">
                         <input type="search" name="search" placeholder="Serach Here" id="">
-                    </form>
-    
-                  <!-- Default Table -->
+                        <select name="cat" id="">
+                          <option value="1">Shirt</option>
+                          <option value="2">Pant</option>
+                          <option value="3">Shoe</option>
+                          <option value="4">Belt</option>
+                        </select>
+                        <input type="submit" value="Submit" name="SEARCH">
+                      </form>
+                    
+                        {{-- // echo count($products); --}}
+                        {{-- if(count($products) > 0){
+                          
+                        }else{
+                           "No data found";
+                        } --}}
+
+                        @if(count($products) > 0)
+
+                                            <!-- Default Table -->
                   <table class="table">
                     <thead>
                       <tr>
@@ -67,6 +83,14 @@
                     </tbody>
                   </table>
                   <!-- End Default Table Example -->
+
+                        @else
+                          <h2>No Data Found</h2>
+                        @endif
+                   
+
+    
+
                 </div>
               </div>
   

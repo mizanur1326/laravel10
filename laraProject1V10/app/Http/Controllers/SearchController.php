@@ -14,7 +14,7 @@ class SearchController extends Controller
 
 
         if($request->filled('search')){
-            $products = Product::search($request->search)->get();
+            $products = Product::search($request->search)->where('category_id', $request->cat)->get();
         }else{
             $products = Product::get();
         }

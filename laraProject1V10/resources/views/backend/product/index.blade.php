@@ -52,7 +52,15 @@
                       {{-- <td>{{$product->category_id}}</td> --}}
                       <td>{{$product->category->name}}</td>
 
-                      <td><button class="btn btn-primary"><a href="{{route('product.edit', $product->id)}}">Edit</a></button> | <button class="btn btn-danger"><a href="{{route('product.delete', $product->id)}}" onclick="return confirm('Are You sure to Delete')">Delete</a> </button></td>
+                      <td>
+                        <button class="btn btn-primary"><a href="{{route('product.edit', $product->id)}}">Edit</a></button>
+                          | 
+                        <button class="btn btn-danger"><a href="{{route('product.delete', $product->id)}}" onclick="return confirm('Are You sure to Delete')">Delete</a> </button>
+                          |
+                        <button class="btn btn-danger"><a href="{{route('add.to.cart', $product->id)}}">Add To Cart</a> </button>
+
+
+                      </td>
                   </tr>
 
                 @endforeach 
@@ -78,8 +86,5 @@
   </section>
 
 </main><!-- End #main -->
-
-
-
 
 @endsection
