@@ -30,6 +30,26 @@
         </ul>
       </li><!-- End Category Nav -->
 
+      {{-- Brand Nav Start --}}
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#brand-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Brand</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="brand-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{URL('brands')}}">
+              <i class="bi bi-circle"></i><span>All Brand</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{URL('brand/create')}}">
+              <i class="bi bi-circle"></i><span>Add Brand</span>
+            </a>
+          </li>          
+        </ul>
+      </li><!-- Brand Nav End -->
+
 
       {{-- Products Nav Start --}}
 
