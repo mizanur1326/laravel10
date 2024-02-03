@@ -25,8 +25,22 @@
           </a>
         </li><!-- End Search Icon-->
 
-        <li class="nav-item dropdown">
+                
+        <li class="nav-item d-block">
+          <a class="nav-link nav-icon search-bar-toggle " href="{{url('cart')}}">
+            <i class="bi bi-cart-plus-fill">
+              <span class="badge bg-primary badge-number">
+                {{ is_array(session()->get('cart')) ? count(session()->get('cart')) : 0 }}
+              </span>
+            </i>
+          </a>
+        </li><!-- End Search Icon-->
+        
 
+        <li class="nav-item dropdown">
+          
+          </a><!-- End Notification Icon -->
+          
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-bell"></i>
             <span class="badge bg-primary badge-number">4</span>

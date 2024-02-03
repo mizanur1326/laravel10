@@ -48,6 +48,11 @@ Route::patch('update-cart', [ProductController::class, 'update'])->name('update.
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
 
+// Checkout
+Route::get('checkout', [ProductController::class, 'checkout'])->name('checkout.page');    
+Route::post('order', [ProductController::class, 'order'])->name('checkout.order');
+
+
 Route::resource('brands', BrandController::class);
 
 
