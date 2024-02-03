@@ -96,7 +96,7 @@ class ProductController extends Controller
     public function order(Request $request){
         
         $order = new Order();
-         $order_data = $request->all(); 
+         $order_data = $request->all();
          $order_data['order_number'] = "ORD" . " " . rand(5, 5000);
          $order_data['quantity'] = 1;
          $order_data['country'] = "Bangladesh";
