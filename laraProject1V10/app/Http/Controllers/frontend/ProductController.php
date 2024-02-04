@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\DemoMail;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class ProductController extends Controller
 {
@@ -114,6 +117,15 @@ class ProductController extends Controller
         //  $order_data['coupon'] = '100';
         //  $order_data['shipping_id'] = '15';
         //  $order->fill($order_data);
+
+
+        $mailData = [
+            'title' => 'Mail from PestKit',
+            'body' => 'Order Placed'
+        ];
+         
+        Mail::to('your_email@gmail.com')->send(new DemoMail($mailData));
+
      }
 
 
