@@ -30,7 +30,7 @@ export default function Index(props){
                                             <th className="px-4 py-2">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>                                        
                                         {posts.map(({ id, title, body }) => (
                                             <tr>
                                                 <td className="border px-4 py-2">{ id }</td>
